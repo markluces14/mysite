@@ -1,0 +1,34 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+List of user
+{% endblock title %}
+
+{% block content %}
+
+
+<a href="#" class="btn btn-primary float-end mt-1 me-1">Add Gender</a>
+{% include "include/messages.html" %}
+<div class="col-md-6 mx-auto">
+    <div class="table responsive">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>First Name</th>
+                    <th>Middle Name</th>
+                    <th>Last Name</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock content %}
+
