@@ -6,8 +6,10 @@ Create User
 
 {% block content %}
 
+{% include "include/messages.html" %}
+
 <div class="col-md-4 mx-auto mt-3">
-    <form action="#" method="post">
+    <form action="/user/store" method="post">
         {% csrf_token %}
         <div class="mb-3">
             <label for="first_name">First Name</label>
@@ -22,28 +24,36 @@ Create User
             <input type="text" class="form-control" id="last_name" name="last_name"/>
         </div>
         <div class="mb-3">
-            <label for="age">Age</label>
+            <label for= "age">Age</label>
             <input type="text" class="form-control" id="age" name="age"/>
         </div>
         <div class="mb-3">
             <label for="birth_date">Birth Date</label>
-            <input type="text" class="form-control" id="birth_date" name="birth_date"/>
+            <input type="date" class="form-control" id="birth_date" name="birth_date"/>
         </div>
         <div class="mb-3">
-            <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="gender" name="gender"/>
+            <label for="gender_id">Gender</label>
+            <select name="gender_id" id="gender_id" class="form-select">
+                <option value="">N/A</option>
+                {% for gender in genders  %}
+                    <option value="{{ gender.gender_id }}">{{ gender.gender }}</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
-            <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="gender" name="gender"/>
+            <label for="username">Username</label>
+            <input type="text" class="form-control" id="username" name="username"/>
         </div>
         <div class="mb-3">
-            <label for="first_name">First Name</label>
-            <input type="text" class="form-control" id="gender" name="gender"/>
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password"/>
         </div>
-
-        <button type="submit" class="btn btn-success float-end col-12 col-md-4">Save Gender</button>
-        <a href="/genders" class="btn btn-secondary float-end col-12 col-md-3 me-1">Back</a>
+        <div class="mb-3">
+            <label for="confirm_password">Confirm password</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password"/>
+        </div>
+        <button type="submit" class="btn btn-success float-end col-12 col-md-4">Save User</button>
+        <a href="/users" class="btn btn-secondary float-end col-12 col-md-3 me-1">Back</a>
     </form>
 </div>
 
