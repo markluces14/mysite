@@ -10,7 +10,10 @@ urlpatterns = [
     path('gender/update/<int:gender_id>', views.update_gender),
     path('gender/delete/<int:gender_id>', views.delete_gender),
     path('gender/destroy/<int:gender_id>', views.destroy_gender),
-    path('users', views.index_user),
+    path('', views.index_user),
     path('user/create', views.create_user),
     path('user/store', views.store_user),
+    path('user/show/<int:user_id>', views.show_user),
+    path('user/delete/<int:user_id>', views.delete_user),
+    path('user/destroy/<int:user_id>', views.destroy_user),
 ]

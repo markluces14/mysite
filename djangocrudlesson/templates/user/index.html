@@ -6,6 +6,8 @@ List of user
 
 {% block content %}
 
+{% include "include/navbar.html" %}
+
 
 <a href="user/create" class="btn btn-primary float-end mt-1 me-1">Add User</a>
 {% include "include/messages.html" %}
@@ -32,9 +34,9 @@ List of user
                     <td>{{ user.gender }}</td>
                     <td>
                         <div class="btn-group">
-                            <a href="#" class="btn btn-primary">View</a>
+                            <a href="/user/show/{{user.user_id}}" class="btn btn-primary">View</a>
                             <a href="#" class="btn btn-success">Edit</a>
-                            <a href="#" class="btn btn-danger">Delete</a>
+                            <a href="/user/delete/{{user.user_id}}" class="btn btn-danger">Delete</a>
                         </div>
                     </td>
                 </tr>
