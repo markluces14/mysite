@@ -122,6 +122,6 @@ def delete_user(request, user_id):
 
 def destroy_user(request, user_id):
     User.objects.filter(pk=user_id).delete() # DELETE FROM genders WHERE gender_id = gender_id
-    messages.danger(request, 'User Successfully Deleted')
+    messages.success(request, 'User Successfully Deleted')
 
     return redirect('/')
