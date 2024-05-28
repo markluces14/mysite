@@ -125,3 +125,29 @@ def destroy_user(request, user_id):
     messages.success(request, 'User Successfully Deleted')
 
     return redirect('/')
+
+def edit_user(request, user_id):
+    genders = Gender.objects.all()
+    user = User.objects.select_related('gender').get(pk=user_id)
+
+    context = {
+        'genders': genders,
+        'user': user,
+    }
+
+    return render(request, 'user/edit.html', context)
+
+def update_user(request, user_id):
+    firstName = request.POST.get('first_name')
+    middleName = request.POST.get('middle_name')
+    lasttName = request.POST.get('last_name')
+    age = request.POST.get('age')
+    birthDate = request.POST.get('birth_date')
+    gender = request.POST.get('gender_id')
+    username = request.POST.get('username')
+
+    User.objects.filter(pk=user_id).update(first_name=firstName, middle_name=middleName, last_name=lasttName, age=age, birth_date=birthDate, gender_id=gender, username=username) 
+    messages.success(request, 'Gender Successfully Saved')
+
+
+    return redirect("/")
