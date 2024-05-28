@@ -103,7 +103,7 @@ def store_user(request):
         return redirect('/user/create')
     
 def show_user(request, user_id):
-    user = User.objects.get(pk=user_id) #SELECT * FROM genders WHERE gender_id = gender_id
+    user = User.objects.get(pk=user_id) 
 
     context = {
         'user': user,

@@ -7,12 +7,12 @@ Delete User
 {% block content %}
 
 <h1>Delete User</h1>
-<p>Are you sure do you want to delete this "{{user.user}}"?</p>
+<p>Are you sure do you want to delete this User ?</p>
 
 <form action="/user/destroy/{{user.user_id}}" method="post">
     {% csrf_token %}
     <button type="submit" class="btn btn-danger float-end">Yes</button>
-    <a href="/genders" class="btn btn-secondary float-end">No</a>
+    <a href="/" class="btn btn-secondary float-end">No</a>
 </form>
 
 {% endblock content %}
