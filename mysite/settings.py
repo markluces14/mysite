@@ -79,8 +79,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'djangocrudlesson_db',
         'USER': 'root',
-        'PASSWORD': 'pinabuang',
-        'PORT': '3300',
+        'PASSWORD': '',
+        'PORT': '3306',
         'HOST': 'localhost',
     }
 }
